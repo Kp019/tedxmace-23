@@ -1,0 +1,20 @@
+{
+  "name": "tedx",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.0.8"
+  },
+  "dependencies": {
+    "appwrite": "^13.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "require": "^2.4.20"
+  }
+}

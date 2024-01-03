@@ -1,0 +1,81 @@
+.cont{
+    background-color: #1D111B;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.btn_cont{
+    padding-top: 30px;
+    display: flex;
+    gap: 30px;
+}
+
+.btn_cont a{
+    background-color: bisque;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 18px;
+    padding-right: 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #1D111B;
+    transition: 500ms;
+    font-weight: 500;
+}
+
+.btn_cont a:hover{
+    filter: drop-shadow(5px 5px #912cc4);
+}
+
+
+.register_cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+.buy_now .qr{
+    width: 300px;
+    height: auto;
+    border-radius: 12px;
+}
+
+.reg{
+    width: 500px;
+    padding: 50px;
+    background-color: #ddc1a0;
+    border-radius: 12px;
+    filter: drop-shadow(8px 8px #912cc4);
+}
+
+.input_ty{
+    background-color: transparent;
+    border-right: 0;
+    border-left: 0;
+    border-top: 2px;
+    border-color: #1D111B;
+}
+
+.btn_sub{
+    background-color: #1D111B;
+    border: none;   
+    border-radius: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: aliceblue;
+    transition: 500ms;
+}
+
+.btn_submit:hover .btn_sub{
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    filter: drop-shadow(5px 5px #912cc4);
+}
