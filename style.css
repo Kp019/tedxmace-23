@@ -9,6 +9,12 @@ p{
   color: white;
 }
 
+#preloader{
+  background: #ffffff url(https://icons8.com/preloaders/preloaders/1495/Spinner-3.gif) no-repeat center center;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+}
 
 /* main styles end*/
 
