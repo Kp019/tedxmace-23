@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          background-color: #121212; /* Darker background color */
+          color: #ffffff; /* Light text color */
+        }
+        
+        .hed{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+          color: #ffffff; /* Light text color for heading */
+        }
+    
+        #logout {
+          background-color: #007acc; /* Darker button background color */
+          color: #ffffff; /* Light text color for button */
+          border: none;
+          padding: 8px 16px;
+          border-radius: 4px;
+          cursor: pointer;
+          margin-bottom: 20px;
+          margin-right: 20px;
+        }
+
+        #export{
+            background-color: #ffffff; /* Darker button background color */
+          color: #132471; /* Light text color for button */
+          border: none;
+          padding: 8px 16px;
+          border-radius: 4px;
+          cursor: pointer;
+          margin-bottom: 10px;
+          margin-left: 10px;
+        }
+    
+        #data-container {
+          list-style-type: none;
+          padding: 0;
+        }
+    
+        #data-table {
+          width: 100%;
+          border-collapse: collapse;
+          margin-top: 20px;
+          background-color: #1e1e1e; /* Darker table background color */
+          color: #ffffff; /* Light text color for table content */
+        }
+    
+        #data-table th,
+        #data-table td {
+          padding: 12px;
+          text-align: left;
+          border-bottom: 1px solid #404040; /* Darker border color for table cells */
+        }
+    
+        #data-table th {
+          background-color: #333333; /* Darker background color for table header */
+        }
+    
+      </style>
+<!-- <style>
+        table {
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+  width: 100%;
+}
+
+thead tr th {
+  font-weight: bold;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+tbody tr td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #f5f5f5;
+}
+    </style> -->
+</head>
+<body>
+    <div class="hed">
+        <h1>Data from Appwrite</h1>
+        <div class="btnss">
+            <input id="logout" type="button" value="logout">
+            <input id="export" type="button" value="export">
+        </div>
+    </div>
+    <ul id="data-container"></ul>
+
+    <table id="data-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Number</th>
+                <th>Email</th>
+                <th>Organization</th>
+                <th>Organization Name</th>
+                <th>Pyment</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+    <script type="module" src="admin.js"></script>
+</body>
+</html>

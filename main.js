@@ -11,6 +11,8 @@ const Collection_early = import.meta.env.VITE_APP_COLLECTION_EARLY
 const Collection_mace = import.meta.env.VITE_APP_COLLECTION_MACE
 const Collection_macep = import.meta.env.VITE_APP_COLLECTION_MACEP
 const Collection_prem = import.meta.env.VITE_APP_COLLECTION_PREMIUM
+const Collection_full = import.meta.env.VITE_APP_COLLECTION_FULL
+
 
 client
     .setEndpoint(EndPoint)
@@ -101,6 +103,23 @@ async function submitprem(e){
     const org = e.target.district.value;
     const orgname = document.querySelector("#orname")?.value || '';
     const link = e.target.proof.value;
+    
+    
+    const mace_resp = await db.createDocument(
+            DataBaseId,
+            Collection_full,
+            ID.unique(),
+            {
+                'name': name,
+                'number': phone,
+                'email': email,
+                'organization': org,
+                'organization_name': orgname,
+                'proof': link,
+            }
+        )
+
+    
     if(orgname==''){
         const mace_resp = await db.createDocument(
             DataBaseId,
@@ -111,7 +130,7 @@ async function submitprem(e){
                 'number': phone,
                 'email': email,
                 'organization': org,
-                'organization-name': 'MACE',
+                'organization_name': 'MACE',
                 'proof': link,
             }
         )
@@ -136,7 +155,7 @@ async function submitprem(e){
                 'email': email,
                 'number': phone,
                 'organization': org,
-                'organization-name': orgname,
+                'organization_name': orgname,
                 'proof': link,
             }
         )
@@ -163,6 +182,20 @@ async function normalticket(e){
     const org = e.target.district.value;
     const orgname = document.querySelector("#orname")?.value || '';
     const link = e.target.proof.value;
+    
+    const mace_resp = await db.createDocument(
+        DataBaseId,
+        Collection_full,
+        ID.unique(),
+        {
+            'name': name,
+            'number': phone,
+            'email': email,
+            'organization': org,
+            'organization_name': orgname,
+            'proof': link,
+        }
+    )
 
     if(orgname==''){
         const mace_resp = await db.createDocument(
@@ -174,7 +207,7 @@ async function normalticket(e){
                 'number': phone,
                 'email': email,
                 'organization': org,
-                'organization-name': 'MACE',
+                'organization_name': 'MACE',
                 'proof': link,
             }
         )
@@ -225,6 +258,21 @@ async function submitearly(e){
     const org = e.target.district.value;
     const orgname = e.target.org_name.value;
     const link = e.target.proof.value;
+
+    const mace_resp = await db.createDocument(
+        DataBaseId,
+        Collection_full,
+        ID.unique(),
+        {
+            'name': name,
+            'number': phone,
+            'email': email,
+            'organization': org,
+            'organization_name': orgname,
+            'proof': link,
+        }
+    )
+
     const erly_resp = await db.createDocument(
         DataBaseId,
         Collection_early,
@@ -234,7 +282,7 @@ async function submitearly(e){
             'number': phone,
             'email': email,
             'organization': org,
-            'orgname': orgname,
+            'organization_name': orgname,
             'proof': link,
         }
     )

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Login</title>
+<script src="https://cdn.jsdelivr.net/npm/appwrite@0.15.3/dist/appwrite.min.js"></script>
+<script type="module" src="script.js"></script>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Darker background color */
+    color: #ffffff; /* Light text color */
+  }
+
+  .container {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  #loginForm {
+    background-color: #1e1e1e; /* Darker form background color */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    width: 300px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+    color: #bbbbbb; /* Lighter label text color */
+  }
+
+  input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #404040; /* Darker border color */
+    border-radius: 4px;
+    background-color: #333333; /* Darker input background color */
+    color: #ffffff; /* Light text color for input */
+  }
+
+  button {
+    padding: 10px 20px;
+    background-color: #007acc; /* Darker button background color */
+    color: #ffffff; /* Light text color for button */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #005687; /* Darker button background color on hover */
+  }
+</style>
+<body>
+  <div class="container">
+  <h1>Admin Login</h1>
+  <form id="loginForm">
+    <label for="username">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    <button type="submit">Login</button>
+  </form>
+</div>
+
+</body>
+</html>

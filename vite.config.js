@@ -14,7 +14,9 @@ export default defineConfig({
         'process.meta.env.VITE_COLLECTION_MACEP':JSON.stringify(process.env.VITE_COLLECTION_MACEP),
         'process.meta.env.VITE_COLLECTION_PREMIUM':JSON.stringify(process.env.VITE_COLLECTION_PREMIUM),
         'process.meta.env.VITE_COLLECTIONGROUP':JSON.stringify(process.env.VITE_APP_COLLECTION_GROUP),
-        
+        'process.meta.env.VITE_ADMINUSER':JSON.stringify(process.env.ADMIN_USER),
+        'process.meta.env.VITE_ADMINPASS':JSON.stringify(process.env.ADMIN_PASSWORD),
+        'process.meta.env.VITE_COLLECTIONFULL':JSON.stringify(process.env.VITE_APP_COLLECTION_FULL),
     },
 
     build: {
@@ -25,6 +27,8 @@ export default defineConfig({
             registermace: resolve(__dirname, 'pages/registermace/index.html'), //normal ticket
             registerprem: resolve(__dirname, 'pages/registerprem/index.html'), //premium ticket
             registergrp: resolve(__dirname, 'pages/registergrp/index.html'), //grouptickets
+            admin: resolve(__dirname, 'pages/admin/index.html'),
+            login: resolve(__dirname, 'pages/login/index.html'),
         },
         },
       },

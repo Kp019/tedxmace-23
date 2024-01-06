@@ -5,6 +5,7 @@ const CollectionIdGrp = import.meta.env.VITE_APP_COLLECTION_GROUP
 const ProjectId = import.meta.env.VITE_PROJECTID
 const DataBaseId = import.meta.env.VITE_APP_DATAID
 const EndPoint =  import.meta.env.VITE_ENDPOINT
+const Collection_full = import.meta.env.VITE_APP_COLLECTION_FULL
 
 
 
@@ -116,6 +117,21 @@ async function cook(e){
 
     for(let k=0; k<numTickets; k++){
         // console.log(ticketsData[k].name)
+        
+        const mace_resp = await db.createDocument(
+            DataBaseId,
+            Collection_full,
+            ID.unique(),
+            {
+                'name': ticketsData[k].name,
+                'number': ticketsData[k].phone,
+                'email': ticketsData[k].email,
+                'organization': ticketsData[k].org,
+                'organization_name': ticketsData[k].orgname,
+                'proof': ticketsData[k].proof,
+            }
+        )
+
         const rep = await db.createDocument(
             DataBaseId,
             CollectionIdGrp,
@@ -125,7 +141,7 @@ async function cook(e){
                 'number' : ticketsData[k].phone,
                 'email' : ticketsData[k].email,
                 'organization': ticketsData[k].org,
-                'organization-name': ticketsData[k].orgname,
+                'organization_name': ticketsData[k].orgname,
                 'proof':ticketsData[k].proof,
             }
             )
