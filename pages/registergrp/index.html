@@ -10,13 +10,12 @@
 </head>
 <body class="cont d-flex justify-content-center align-items-center align-content-center">
 <div class="register_cont d-flex flex-row justify-content-center align-items-center align-content-center">
-    <a href="/">home</a>
     <div class="reg">
-        <h2 class="pb-3">Register Now</h2>
-        <form name="myform" id="myform" action="" method = "post">
+        <h2 class="pb-3">Premium Ticket</h2>
+        <form name="grptickets" id="grptickets" action="" method = "post">
             <!-- {% csrf_token %} -->
             <div class="forms">
-                <div class="name py-2">
+                <!-- <div class="name py-2">
                     <label for="name">Your name: </label>
                     <input class="input_ty w-100" id="name" type="text" name="name" required>
                 </div>
@@ -29,23 +28,39 @@
                     <input class="input_ty w-100" id="phn" type="tel" name="phn" required pattern="[0-9]{10}">
                 </div>
                 <div class="select_itm pt-3 pb-2">
-                    <select name="org" id="district" name="district" class="input_ty w-100 p-2" required>
-                        <option value="">Select Organization</option>
+                    <select id="district" name="district" class="input_ty w-100 p-2" required>
+                        <option value="">Select your Organization</option>
                         <option value="College">College</option>
                         <option value="School">School</option>
                         <option value="Working Professional">Working Professional</option>
                     </select>
                 </div>
-                <div class="org_name py-2">
-                    <label for="org_name">Name of your Organization: </label>
-                    <input class="input_ty w-100" id="org_name" type="text" name="org_name" required>
+                <div class="select_itm pt-3 pb-2">
+                    <select name="org_bla" id="org_bla" class="input_ty w-100 p-2" required>
+                        <option value="">Name of Organization</option>
+                        <option value="MACE">MACE</option>
+                        <option value="OTHER">Other</option>
+                    </select>
+                </div> -->
+                <div class="select_itm pt-3 pb-2">
+                    <select id="numTickets" class="input_ty w-100 p-2" required>
+                        <option>number of tickets</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                </div>
+                <div id="ticketDetails" class="org_name py-2">
+                    
                 </div>
                 <div class="reg_proof py-3">
                     <label for="proof">Payment screenshot link: </label>
                     <input class="input_ty w-100" id="proof" type="url" name="proof" required>
                 </div>
                 <div class="btn_submit d-flex justify-content-center align-items-center align-content-center pt-3">
-                    <input class="btn_sub" type="submit" value="Submit">
+                    <input class="btn_sub" id="bookTickets" type="submit" value="bookTickets">
                 </div>
             </div>
         </form>
@@ -56,6 +71,7 @@
         <p class="text-white py-3">UPI ID : krishnaprasadr666@oksbi</p>    
     </div>
 </div>
-<script type="module" src="/main.js"></script>
+<script type="module" src="pages.js"></script>
+
 </body>
 </html>
