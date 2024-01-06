@@ -6,7 +6,7 @@ const ProjectId = import.meta.env.VITE_PROJECTID
 const DataBaseId = import.meta.env.VITE_APP_DATAID
 const EndPoint =  import.meta.env.VITE_ENDPOINT
 
-// console.log(CollectionIdGrp)
+
 
 
 client
@@ -98,8 +98,6 @@ async function cook(e){
         proof,
     });
     }
-    console.log(ticketsData)
-    console.log(typeof(ticketsData))
 
     let z = 0;
 
@@ -131,8 +129,5 @@ async function cook(e){
       grptickets.reset();
       alert("registration Successful")
     }
-    // if(rep){
-    //   console.log('hi');
-    // }
 }
 

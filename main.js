@@ -11,7 +11,6 @@ const Collection_early = import.meta.env.VITE_APP_COLLECTION_EARLY
 const Collection_mace = import.meta.env.VITE_APP_COLLECTION_MACE
 const Collection_macep = import.meta.env.VITE_APP_COLLECTION_MACEP
 const Collection_prem = import.meta.env.VITE_APP_COLLECTION_PREMIUM
-// const CollectiongrpId = import.meta.env.VITE_APP_COLLECTION_GROUP
 
 client
     .setEndpoint(EndPoint)
@@ -228,43 +227,3 @@ async function submitearly(e){
         console.error('error occured')
     });
 }
-
-
-// async function submitform(e){
-//     e.preventDefault();
-//     const name = e.target.name.value;
-//     const email = e.target.email.value;
-//     const phone = e.target.phn.value;
-//     const org = e.target.district.value;
-//     const orgname = e.target.org_name.value;
-//     const link = e.target.proof.value;
-
-//     // const promise = storage.createFile(
-//     //     BucketId,
-//     //     ID.unique(),
-//     //     document.getElementById('uploader').files[0]
-//     // )
-
-
-//     const response = await db.createDocument(
-//         DataBaseId,
-//         CollectionId,
-//         ID.unique(),
-//         {
-//             'Name': name,
-//             'Email': email,
-//             'Number': phone,
-//             'Organization': org,
-//             'Name_Organization': orgname,
-//             'Proof': link,
-//         }
-//     )
-//     .then(response => {
-//         form.reset();
-//         alert('registration Successful');
-//     })
-//     .catch(error => {
-//         alert('Error OCCURED CONTACT AT : +91 8330859663');
-//         console.error('error occured')
-//     });
-// }
