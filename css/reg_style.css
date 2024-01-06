@@ -1,6 +1,6 @@
 .cont{
     background-color: #1D111B;
-    
+    padding-top: 100px;
 }
 
 
@@ -30,8 +30,6 @@
 
 .register_cont {
     display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 100px;
 }
 

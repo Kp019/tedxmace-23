@@ -29,6 +29,19 @@ const ticketDetailsContainer = document.getElementById("ticketDetails");
 // Add event listener for dropdown change
 numTicketsDropdown.addEventListener("change", () => {
   const numTickets = parseInt(numTicketsDropdown.value);
+  let amount= 0;
+  if(numTickets<=3){
+    let amt = 1099
+    amount = amt*numTickets
+  }else if(numTickets>3 && numTickets<=6){
+    let amt = 1049
+    amount = amt*numTickets
+  }
+
+  let grptkts = document.getElementById("grpamt")
+  if(grptkts){
+    grptkts.textContent = `Amount to be paid : ₹${amount}`
+  }
 
   // Clear any existing input sections
   ticketDetailsContainer.innerHTML = "";

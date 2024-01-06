@@ -47,6 +47,7 @@ if other there will be a new input field*/
 const org_bla = document.querySelector("#org_bla")
 org_bla.addEventListener('change',(event))
 let inp = false
+let inpppt = false
 onchange = (event) => {
     const bla = org_bla.value
     const container = document.querySelector("#blll")
@@ -64,10 +65,30 @@ onchange = (event) => {
         container.querySelectorAll('label, input').forEach(element => element.remove());
         inp = false
     }
+    
+    const selectedOption = document.getElementById("org_bla").value; // Get the selected option
+    // const numTickets = parseInt(numTicketsDropdown.value);
+    let totalAmount = 0;
+    let premamt = 0;
+    if (selectedOption === "MACE") {
+      totalAmount = 999;
+      premamt = 1199;
+    } else if(selectedOption === "OTHER") {
+      totalAmount = 1199;
+      premamt = 1399;
+    }
+    
+    let norm = document.getElementById("amount")
+    let premamtval = document.getElementById("amount_prem")
+    if(norm){
+        norm.textContent = `Amount to be paid : ₹${totalAmount}`
+    }else if(premamtval){
+        premamtval.textContent = `Amount to be paid : ₹${premamt}`
+    }
+
 };
 
-//to select the number of participants for group ticketing(min-2 & max-6)
-let ticket = 5;
+
 
 
 
@@ -129,6 +150,7 @@ async function submitprem(e){
             console.error('error occured')
         });
     }
+    
 }
 
 
