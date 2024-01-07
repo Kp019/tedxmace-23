@@ -41,6 +41,7 @@ if(formearly){
 const formmace = document.querySelector("#myformmace")
 if(formmace){
     formmace.addEventListener('submit', normalticket);
+    console.log("js working")
 }
 
 
