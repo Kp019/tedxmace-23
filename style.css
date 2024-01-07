@@ -674,12 +674,41 @@ grid-template-rows: repeat(25,2%);
 /* Footer */
 
 
+.speak_card_cont{
+  display: block;
+}
+.speakers_container_1{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.speak_cont{
+  background-color: #ddc1a0;
+  width: 300px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.speak_cont img{
+  width: 280px;
+  border-radius: 12px;
+}
+
+.speak_doc{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 15px;
+}
 /* screen - 1024px */
 @media only screen and (min-width: 1024px) {
 
-  .speak_card_cont{
-      display: none;
-  }
 
 .speakers{
       
@@ -756,7 +785,7 @@ grid-template-rows: repeat(25,2%);
       display: none;
   }
 
-  .speak_card_cont{
+  /* .speak_card_cont{
       display: block;
   }
   .speakers_container_1{
@@ -786,7 +815,7 @@ grid-template-rows: repeat(25,2%);
       flex-direction: column;
       align-items: center;
       padding-top: 15px;
-  }
+  } */
 
   .line{
       width: 700px;
@@ -804,7 +833,7 @@ grid-template-rows: repeat(25,2%);
 }
 
 @media only screen and ( max-width : 960px ){
-  .speak_card_cont{
+  /* .speak_card_cont{
       display: block;
   }
 
@@ -829,7 +858,7 @@ grid-template-rows: repeat(25,2%);
       flex-direction: column;
       align-items: center;
       padding-top: 15px;
-  }
+  } */
 
   .title-img-card{
       width: 800px;
@@ -852,7 +881,7 @@ grid-template-rows: repeat(25,2%);
 
 @media only screen and ( max-width : 800px ){
 
-  .speak_card_cont{
+  /* .speak_card_cont{
       display: flex;
       flex-direction: row;
       justify-content: center;
@@ -860,7 +889,7 @@ grid-template-rows: repeat(25,2%);
   .speakers_container_1{
       display: flex;
       flex-direction: column;   
-  }
+  } */
 
   .ticket_cont{
       flex-direction: column;
@@ -924,7 +953,7 @@ grid-template-rows: repeat(25,2%);
       margin-left: 10px;
       margin-right: 10px;
   }
-.speak_card_cont{
+/* .speak_card_cont{
   flex-direction: column;
   align-items: center;
 }
@@ -942,7 +971,7 @@ grid-template-rows: repeat(25,2%);
 .speak_cont img{
   width: 280px;
   border-radius: 12px;
-}
+} */
 .line{
   width: 200px;
 }
