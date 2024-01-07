@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "schema://microtica/appwrite.json",
+    "title": "Appwrite service schema",
+    "type": "object",
+    "properties": {
+        "inputs": {
+            "type": "object",
+            "properties": {
+                "DatabasePassword": {
+                    "type": "string",
+                    "description": "MariaDB password. The same password will be used as a token for the Appwrite Executor.",
+                    "maxLength": 32,
+                    "sensitive": true
+                }
+            },
+            "required": [
+                "DatabasePassword"
+            ]
+        }
+    },
+    "additionalProperties": false
+}
