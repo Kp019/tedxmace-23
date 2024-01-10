@@ -1086,8 +1086,40 @@ grid-template-rows: repeat(25,2%);
 
 .show_appear{
   opacity: 1;
-  transform: translateX(0);
+  /* transform: translateX(0); */
 }
+
+
+@media only screen and (max-width:530px){
+  .fade_up{
+    opacity: 1;
+    /* transform: translateY(100px); */
+    /* transition: all 500ms; */
+  }
+  .fade_down{
+    opacity: 1;
+    /* transform: translateY(-10px); */
+    /* transition: all 500ms; */
+  }
+  .fade_left{
+    opacity: 1;
+    /* transform: translateX(-100px); */
+    /* transition: all 500ms; */
+  }
+  .fade_right{
+    opacity: 1;
+    /* transform: translateX(100px); */
+    /* transition: all 500ms; */
+  }
+  .fade_appear{
+    opacity: 1;
+    /* transition: all 500ms; */
+  }
+  
+
+} 
+
+
 
 
 .speak-come-cont{
