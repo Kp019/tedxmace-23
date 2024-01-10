@@ -1090,7 +1090,7 @@ grid-template-rows: repeat(25,2%);
 }
 
 
-@media only screen and (max-width:530px){
+@media only screen and (max-width: 720px){
   .fade_up{
     opacity: 1;
     /* transform: translateY(100px); */
