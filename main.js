@@ -98,6 +98,7 @@ onchange = (event) => {
 //function for premium ticket
 async function submitprem(e){
     e.preventDefault()
+    alert("please wait for few seconds😊")
     const name = e.target.name.value;
     const email = e.target.email.value;
     const phone = e.target.phn.value;
@@ -177,6 +178,7 @@ async function submitprem(e){
 //function for normal ticket
 async function normalticket(e){
     e.preventDefault();
+    alert("please wait for few seconds😊")
     const name = e.target.name.value;
     const email = e.target.email.value;
     const phone = e.target.phn.value;
@@ -253,6 +255,7 @@ async function normalticket(e){
 //function for earlybird
 async function submitearly(e){
     e.preventDefault();
+    alert("please wait for few seconds😊")
     const name = e.target.name.value;
     const email = e.target.email.value;
     const phone = e.target.phn.value;

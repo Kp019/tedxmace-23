@@ -3,11 +3,18 @@
     padding-top: 100px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
+    /* justify-content: center;
+    align-items: center;*/
+    padding-left: 300px;
 }
 
+.buy_buy{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 .btn_cont{
     padding-top: 30px;
@@ -35,10 +42,10 @@
 
 .register_cont {
     display: flex;
-    gap: 100px;
-    flex-direction: row; 
-    justify-content: center;
-    align-content: center;
+    /* gap: 200px; */
+    /* flex-direction: row; 
+    justify-content: left;
+    align-content: center; */
 }
 
  .buy_now .qr{
@@ -50,6 +57,7 @@
 .reg{
     width: 500px;
     padding: 50px;
+    margin-right: 100px;
     background-color: #ddc1a0;
     border-radius: 12px;
     filter: drop-shadow(8px 8px #912cc4);
@@ -84,6 +92,21 @@
     filter: drop-shadow(5px 5px #912cc4);
 }
 
+@media only screen and ( max-width : 1300px ){
+    .cont{
+        padding-left: 100px;
+    }
+}
+
+@media only screen and ( max-width : 1024px ){
+    .cont{
+        padding-left: 50px;
+    }
+    .reg{
+        margin-right: 50px;
+    }
+}
+
 @media only screen and ( max-width : 940px ){
     .cont{
         padding-top: 100px;
@@ -95,16 +118,24 @@
         display: flex;
         flex-direction: column-reverse;
     }
+    .buy_buy{
+        position: relative;
+    }
 }
 
 @media only screen and ( max-width : 535px){
     .cont{
         padding-top: 30px;
         padding-bottom: 50px;
+        padding-left: 0;
     }
     .reg{
     width: 400px;
     padding: 30px;
+    margin-right: 0;
+    }
+    .register_cont{
+        padding-left: 10px;
     }
     .input_ty{
         width: 320px;
@@ -112,6 +143,12 @@
     .buy_now .qr{
         width: 250px;
         border-radius: 12px;
+    }
+    .reg_reg{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
     }
 }
 
@@ -123,6 +160,7 @@
     .reg{
     width: 280px;
     padding: 10px;
+    
     }
     .input_ty{
         width: 250px;
@@ -130,6 +168,12 @@
     .buy_now .qr{
         width: 200px;
         border-radius: 12px;
+    }
+    .reg_reg{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
     }
 }
 

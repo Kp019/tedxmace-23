@@ -10,21 +10,23 @@
 </head>
 <body class="cont">
 <div class="register_cont ">
-    <div class="reg">
-        <h2 class="pb-3">Premium Ticket</h2>
-        <form name="myformprem" id="myformprem" action="" method = "post">
-            <!-- {% csrf_token %} -->
-            <div class="forms">
-                <div class="name py-2">
-                    <label for="name">Your name: </label>
-                    <input class="input_ty" id="name" type="text" name="name" required>
+    <div class="reg_reg">
+
+        <div class="reg">
+            <h2 class="pb-3">Premium Ticket</h2>
+            <form name="myformprem" id="myformprem" action="" method = "post">
+                <!-- {% csrf_token %} -->
+                <div class="forms">
+                    <div class="name py-2">
+                        <label for="name">Your name: </label>
+                        <input class="input_ty" id="name" type="text" name="name" required>
                 </div>
                 <div class="email py-2">
                     <label for="email">Your Email: </label>
                     <input class="input_ty" id="email" type="email" name="email" required>
                 </div>
                 <div class="phn_num py-2">
-                    <label for="phn">Your Phone number: </label>
+                    <label for="phn">Your Phone number(avoid +91): </label>
                     <input class="input_ty" id="phn" type="tel" name="phn" required pattern="[0-9]{10}">
                 </div>
                 <div class="select_itm pt-3 pb-2">
@@ -56,11 +58,13 @@
             </div>
         </form>
     </div>
+    </div>
     <div class="buy_now d-flex flex-column  align-items-center">
         <h3 class="text-white fw-bolder " id="amount_prem"></h3>
         <h2 class="text-white py-3">Pay Now</h2>
         <img class="qr bg-light" src='/img/QR.png'>
-        <p class="text-white py-3">UPI ID : krishnaprasadr666@oksbi</p>    
+        <p class="text-white py-3">UPI ID : mizajmechery555@okaxis<br>UPI NUM : 9496563655</p>
+
     </div>
 </div>
 <script type="module" src="/main.js"></script>

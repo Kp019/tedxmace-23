@@ -63,7 +63,7 @@ numTicketsDropdown.addEventListener("change", () => {
       </div>
       <div class="phn_num py-2">  
         <label for="phone${i}">Phone Number:</label>
-        <input class="input_ty w-100" type="tel" id="phone${i}" name="phone${i}"><br>
+        <input class="input_ty w-100" type="tel" id="phone${i}" name="phone${i} (avoid +91)"><br>
       </div>  
       <div class="select_itm pt-3 pb-2">
         <select id="district${i}" name="district${i}" class="input_ty w-100 p-2" required>
@@ -91,6 +91,7 @@ if(grptickets){
 
 async function cook(e){
   e.preventDefault()
+  alert("please wait for few seconds😊")
   const numTickets = parseInt(numTicketsDropdown.value);
   const ticketsData = [];
 

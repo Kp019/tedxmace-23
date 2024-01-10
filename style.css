@@ -3,6 +3,7 @@
 #Main{
   background: #1D111B;
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
 p{
@@ -11,10 +12,11 @@ p{
 
 #preloader{
   background: #ffffff url(https://icons8.com/preloaders/preloaders/1495/Spinner-3.gif) no-repeat center center;
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100vh;
   z-index: 10;
+  overflow-y: hidden;
 }
 
 /* main styles end*/
@@ -1032,3 +1034,103 @@ grid-template-rows: repeat(25,2%);
 
 }
 
+.fade_up{
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 1s;
+}
+
+.show_up{
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+.fade_down{
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 1s;
+}
+
+.show_down{
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade_left{
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 1s;
+}
+
+.show_left{
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade_right{
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 1s;
+}
+
+.show_right{
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade_appear{
+  opacity: 0;
+  transition: all 1s;
+}
+
+.show_appear{
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+.speak-come-cont{
+  display: flex;
+  justify-content: center;
+}
+
+.speak-come{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 200px;
+  padding: 12px;
+  border-radius: 12px;
+  background-color: #C4852C;
+  color: #1D111B;
+  font-weight: 600;
+}
+
+.skp-name{
+  font-size: 20px;
+}
+
+.spk-dec{
+  text-align: center;
+  font-size: 14px;
+}
+
+.social{
+  text-decoration: none;
+  color: #1D111B;
+}
+
+.social:hover{
+  color: #1D111B;
+}
+
+.contact-num{
+  text-decoration: none;
+  color: white;
+}
+
+.contact-num:hover{
+  color: white;
+}
