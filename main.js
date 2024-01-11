@@ -1,4 +1,4 @@
-import {Client, Databases, ID} from "appwrite";
+import {Client, Databases, ID, Storage} from "appwrite";
 
 
 const client = new Client;
@@ -12,6 +12,8 @@ const Collection_mace = import.meta.env.VITE_APP_COLLECTION_MACE
 const Collection_macep = import.meta.env.VITE_APP_COLLECTION_MACEP
 const Collection_prem = import.meta.env.VITE_APP_COLLECTION_PREMIUM
 const Collection_full = import.meta.env.VITE_APP_COLLECTION_FULL
+const BUCKETID = import.meta.env.VITE_APP_BUCKETID
+
 
 
 client
@@ -19,6 +21,8 @@ client
     .setProject(ProjectId);
 
 const db = new Databases(client)
+const storage = new Storage(client);
+
 
 // const form = document.querySelector('#myform');
 // if(form){
@@ -103,9 +107,21 @@ async function submitprem(e){
     const email = e.target.email.value;
     const phone = e.target.phn.value;
     const org = e.target.district.value;
-    const orgname = document.querySelector("#orname")?.value || '';
-    const link = e.target.proof.value;
+    let orgname = document.querySelector("#orname")?.value || '';
+    // const link = e.target.proof.value;
+    const mm = e.target.org_bla.value;
     
+    if(mm=='MACE'){
+        orgname = "MACE";
+    }
+    
+    const upload = storage.createFile(
+        BUCKETID,
+        ID.unique(),
+        document.getElementById('fileup').files[0]
+    );
+
+    let imid = (await upload).$id
     
     const mace_resp = await db.createDocument(
             DataBaseId,
@@ -117,7 +133,7 @@ async function submitprem(e){
                 'email': email,
                 'organization': org,
                 'organization_name': orgname,
-                'proof': link,
+                'IMGID' : imid,
             }
         )
 
@@ -133,7 +149,7 @@ async function submitprem(e){
                 'email': email,
                 'organization': org,
                 'organization_name': 'MACE',
-                'proof': link,
+                'IMGID' : imid,
             }
         )
         
@@ -158,7 +174,7 @@ async function submitprem(e){
                 'number': phone,
                 'organization': org,
                 'organization_name': orgname,
-                'proof': link,
+                'IMGID' : imid,
             }
         )
     
@@ -174,6 +190,29 @@ async function submitprem(e){
     
 }
 
+// document.getElementById('uploader').files[0]
+
+
+
+
+// fileup.addEventListener('change', async (event) => {
+//     const screenshots = event.target.files[0];
+  
+//     try {
+//       const filesupload = await storage.createFile(
+//         BUCKETID,
+//         ID.unique, 
+//         screenshots
+//         ); // Replace with your bucket ID
+//       console.log('File uploaded successfully:', response);
+//       // Handle successful upload (e.g., display confirmation message)
+//       console.log(filesupload.ID)
+//     } catch (error) {
+//         console.error('Error uploading file:', error);
+//         // Handle upload error (e.g., display error message)
+//     }
+//   });
+  
 
 //function for normal ticket
 async function normalticket(e){
@@ -183,9 +222,35 @@ async function normalticket(e){
     const email = e.target.email.value;
     const phone = e.target.phn.value;
     const org = e.target.district.value;
-    const orgname = document.querySelector("#orname")?.value || '';
-    const link = e.target.proof.value;
+    const mm = e.target.org_bla.value;
+    let orgname = document.querySelector("#orname")?.value || '';
+    // const link = e.target.proof.value;
+    // const files = e.target.file.files;
+    // console.log(files)
+    // const file = e.target.files[0]
+    // console.log(fileup.value)
+    // const filesupload = await client.storage.createFile(
+    //     BUCKETID,
+    //     ID.unique, 
+    //     file
+    //     );
+    const upload = storage.createFile(
+        BUCKETID,
+        ID.unique(),
+        document.getElementById('fileup').files[0]
+    );
     
+    let imid = (await upload).$id
+    
+    console.log(mm)
+    console.log(orgname)
+
+    if(mm=='MACE'){
+        orgname = "MACE";
+    }
+
+    console.log(orgname)
+
     const mace_resp = await db.createDocument(
         DataBaseId,
         Collection_full,
@@ -196,7 +261,7 @@ async function normalticket(e){
             'email': email,
             'organization': org,
             'organization_name': orgname,
-            'proof': link,
+            'IMGID': imid,
         }
     )
 
@@ -211,7 +276,7 @@ async function normalticket(e){
                 'email': email,
                 'organization': org,
                 'organization_name': 'MACE',
-                'proof': link,
+                'IMGID': imid,
             }
         )
         
@@ -236,7 +301,7 @@ async function normalticket(e){
                 'Number': phone,
                 'Organization': org,
                 'Name_Organization': orgname,
-                'Proof': link,
+                'IMGID' : imid,
             }
         )
     
@@ -261,7 +326,16 @@ async function submitearly(e){
     const phone = e.target.phn.value;
     const org = e.target.district.value;
     const orgname = e.target.org_name.value;
-    const link = e.target.proof.value;
+    // const link = e.target.proof.value;
+
+    // const fileup = document.getElementById('fileup');
+    const upload = storage.createFile(
+        BUCKETID,
+        ID.unique(),
+        document.getElementById('fileup').files[0]
+    );
+
+    let imid = (await upload).$id
 
     const mace_resp = await db.createDocument(
         DataBaseId,
@@ -273,7 +347,7 @@ async function submitearly(e){
             'email': email,
             'organization': org,
             'organization_name': orgname,
-            'proof': link,
+            'IMGID' : imid,
         }
     )
 
@@ -287,7 +361,7 @@ async function submitearly(e){
             'email': email,
             'organization': org,
             'organization_name': orgname,
-            'proof': link,
+            'IMGID' : imid,
         }
     )
     

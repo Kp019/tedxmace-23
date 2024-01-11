@@ -1,4 +1,4 @@
-import {Client, Databases, ID} from "appwrite";
+import {Client, Databases, ID, Storage} from "appwrite";
 
 const client = new Client;
 const CollectionIdGrp = import.meta.env.VITE_APP_COLLECTION_GROUP
@@ -6,6 +6,7 @@ const ProjectId = import.meta.env.VITE_PROJECTID
 const DataBaseId = import.meta.env.VITE_APP_DATAID
 const EndPoint =  import.meta.env.VITE_ENDPOINT
 const Collection_full = import.meta.env.VITE_APP_COLLECTION_FULL
+const BUCKETID = import.meta.env.VITE_APP_BUCKETID
 
 
 
@@ -15,6 +16,7 @@ client
     .setProject(ProjectId);
 
 const db = new Databases(client)
+const storage = new Storage(client);
 
 
 
@@ -101,8 +103,17 @@ async function cook(e){
     const phone = document.querySelector(`#phone${i}`).value;
     const org = document.querySelector(`#district${i}`).value;
     const orgname = document.querySelector(`#org_name${i}`).value; 
-    const proof  = document.querySelector("#proof").value;
-    console.log(proof)
+    // const proof  = document.querySelector("#proof").value;
+    
+
+    const upload = storage.createFile(
+      BUCKETID,
+      ID.unique(),
+      document.getElementById('fileup').files[0]
+    );
+    let imid = (await upload).$id
+
+    // console.log(proof)
 
     ticketsData.push({
         name,
@@ -110,7 +121,7 @@ async function cook(e){
         phone,
         org,
         orgname,
-        proof,
+        imid,
     });
     }
 
@@ -129,7 +140,7 @@ async function cook(e){
                 'email': ticketsData[k].email,
                 'organization': ticketsData[k].org,
                 'organization_name': ticketsData[k].orgname,
-                'proof': ticketsData[k].proof,
+                'IMGID' : ticketsData[k].imid,
             }
         )
 
@@ -143,7 +154,7 @@ async function cook(e){
                 'email' : ticketsData[k].email,
                 'organization': ticketsData[k].org,
                 'organization_name': ticketsData[k].orgname,
-                'proof':ticketsData[k].proof,
+                'IMGID' : ticketsData[k].imid,
             }
             )
             .then((rep) => {

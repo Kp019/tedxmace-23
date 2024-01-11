@@ -22,6 +22,10 @@ client
     // .setSelfSigned(true); // If using a self-signed certificate
     // .setKey("YOUR_API_KEY");
 
+let val = 0
+
+
+
 
 const account = new Account(client);
 const db = new Databases(client)
@@ -75,10 +79,11 @@ function displayData(documents) {
     const tableBody = document.getElementById("data-table").querySelector("tbody");
     // Clear any existing content
     // dataContainer.innerHTML = "";
-    // console.log(documents)
+    // console.log((documents))
     if (documents) {
       for (const i of documents) {
         //row
+        console.log(i)
         const rows = document.createElement("tr");  
         
         //elemets in rows
@@ -88,12 +93,20 @@ function displayData(documents) {
         const orgcell = document.createElement("td");
         const orgnmcell = document.createElement("td");
         const prfcell = document.createElement("td");
+        const idcell = document.createElement("td");
+        const imgid = i.IMGID;
+        const baseurl = "https://cloud.appwrite.io/v1/storage/buckets/6594ea6846535114ac07/files/{{imgid}}/view?project=6594684778d28abf8d83&mode=admin"
+        const fileid = baseurl.replace('{{imgid}}', imgid)
+
         nmcell.textContent = i.name;
         emailCell.textContent = i.email;
         phncell.textContent = i.number;
         orgcell.textContent = i.organization
         orgnmcell.textContent = i.organization_name
         prfcell.textContent = i.proof
+        prfcell.textContent = fileid
+
+        // https://cloud.appwrite.io/v1/storage/buckets/6594ea6846535114ac07/files/{{FILE ID}}/view?project=6594684778d28abf8d83&mode=admin
     
         rows.appendChild(nmcell);
         rows.appendChild(phncell);
@@ -101,9 +114,15 @@ function displayData(documents) {
         rows.appendChild(orgcell);
         rows.appendChild(orgnmcell);
         rows.appendChild(prfcell);
+        rows.appendChild(idcell)
         
         tableBody.appendChild(rows);
         
+        ++val;
+        const total = document.getElementById('totalp')
+        if(total){
+          total.textContent = `Number of Participants = ${val}`
+        }
       }
     } else {
       // Handle empty collection (e.g., display a message)
@@ -116,6 +135,8 @@ function displayData(documents) {
     window.location.href = "/";
   });
 }
+
+
 
 // const exportButton = document.getElementById("export");
 const exportButton = document.getElementById("export");
