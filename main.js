@@ -37,6 +37,7 @@ if(formprem){
 
 //calling early bird ticket
 const formearly = document.querySelector('#myformearly');
+
 if(formearly){
     formearly.addEventListener('submit', submitearly);
 }
@@ -45,7 +46,7 @@ if(formearly){
 const formmace = document.querySelector("#myformmace")
 if(formmace){
     formmace.addEventListener('submit', normalticket);
-    console.log("js working")
+    // console.log("js working")
 }
 
 
@@ -111,6 +112,9 @@ async function submitprem(e){
     // const link = e.target.proof.value;
     const mm = e.target.org_bla.value;
     
+    document.getElementById('btn_sub').disabled = true;
+    document.getElementById('btn_sub').value = "please wait";
+
     if(mm=='MACE'){
         orgname = "MACE";
     }
@@ -155,6 +159,8 @@ async function submitprem(e){
         
         .then(mace_resp => {
             formprem.reset();
+            document.getElementById('btn_sub').disabled = false;
+            document.getElementById('btn_sub').value = "Book Now";
             alert('registration Successful');
         })
     
@@ -180,6 +186,8 @@ async function submitprem(e){
     
         .then(response => {
             formprem.reset();
+            document.getElementById('btn_sub').disabled = false;
+            document.getElementById('btn_sub').value = "Book Now";
             alert('registration Successful');
         })
         .catch(error => {
@@ -224,6 +232,10 @@ async function normalticket(e){
     const org = e.target.district.value;
     const mm = e.target.org_bla.value;
     let orgname = document.querySelector("#orname")?.value || '';
+
+
+    document.getElementById('btn_sub').disabled = true;
+    document.getElementById('btn_sub').value = "please wait";
     // const link = e.target.proof.value;
     // const files = e.target.file.files;
     // console.log(files)
@@ -242,14 +254,14 @@ async function normalticket(e){
     
     let imid = (await upload).$id
     
-    console.log(mm)
-    console.log(orgname)
+    // console.log(mm)
+    // console.log(orgname)
 
     if(mm=='MACE'){
         orgname = "MACE";
     }
 
-    console.log(orgname)
+    // console.log(orgname)
 
     const mace_resp = await db.createDocument(
         DataBaseId,
@@ -282,6 +294,8 @@ async function normalticket(e){
         
         .then(mace_resp => {
             formmace.reset();
+            document.getElementById('btn_sub').disabled = false;
+            document.getElementById('btn_sub').value = "Book Now";
             alert('registration Successful');
         })
     
@@ -308,6 +322,8 @@ async function normalticket(e){
         .then(response => {
             formmace.reset();
             alert('registration Successful');
+            document.getElementById('btn_sub').disabled = false;
+            document.getElementById('btn_sub').value = "Book Now";
         })
         .catch(error => {
             alert('Error OCCURED CONTACT AT : +91 8330859663');
@@ -328,6 +344,8 @@ async function submitearly(e){
     const orgname = e.target.org_name.value;
     // const link = e.target.proof.value;
 
+    document.getElementById('btn_sub').disabled = true;
+    document.getElementById('btn_sub').value = "please wait";
     // const fileup = document.getElementById('fileup');
     const upload = storage.createFile(
         BUCKETID,
@@ -367,6 +385,8 @@ async function submitearly(e){
     
     .then(erly_resp => {
         formearly.reset();
+        document.getElementById('btn_sub').disabled = false;
+        document.getElementById('btn_sub').value = "Book Now";
         alert('registration Successful');
     })
 

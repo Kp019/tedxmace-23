@@ -105,6 +105,8 @@ async function cook(e){
     const orgname = document.querySelector(`#org_name${i}`).value; 
     // const proof  = document.querySelector("#proof").value;
     
+    document.getElementById('bookTickets').disabled = true;
+    document.getElementById('bookTickets').value = "please wait";
 
     const upload = storage.createFile(
       BUCKETID,
@@ -168,6 +170,8 @@ async function cook(e){
 
     function chel(){
       grptickets.reset();
+      document.getElementById('bookTickets').disabled = false;
+      document.getElementById('bookTickets').value = "Book Now";
       alert("registration Successful")
     }
 }
