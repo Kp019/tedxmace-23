@@ -18,6 +18,7 @@ export default defineConfig({
         'process.meta.env.VITE_ADMINPASS':JSON.stringify(process.env.ADMIN_PASSWORD),
         'process.meta.env.VITE_COLLECTIONFULL':JSON.stringify(process.env.VITE_APP_COLLECTION_FULL),
         'process.meta.env.VITE_BUCKETID':JSON.stringify(process.env.VITE_APP_BUCKETID),
+        'process.meta.env.VITE_BUCKETID':JSON.stringify(process.env.VITE_APP_PINDOWNID),
 
     },
 
@@ -31,6 +32,7 @@ export default defineConfig({
             registergrp: resolve(__dirname, 'pages/registergrp/index.html'), //grouptickets
             admin: resolve(__dirname, 'pages/admin/index.html'),
             login: resolve(__dirname, 'pages/login/index.html'),
+            certdata: resolve(__dirname, 'pages/certdata/index.html'),
         },
         },
       },

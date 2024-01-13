@@ -1,0 +1,146 @@
+.cont{
+    background-color: #1D111B;
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 100px;
+}
+
+.buy_buy{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn_cont{
+    padding-top: 30px;
+    display: flex;
+    gap: 30px;
+}
+
+.btn_cont a{
+    background-color: bisque;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 18px;
+    padding-right: 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #1D111B;
+    transition: 500ms;
+    font-weight: 500;
+}
+
+.btn_cont a:hover{
+    filter: drop-shadow(5px 5px #912cc4);
+}
+
+
+.register_cont {
+    display: flex;
+    /* gap: 200px; */
+    /* flex-direction: row; 
+    justify-content: left;
+    align-content: center; */
+}
+
+ .buy_now .qr{
+    width: 300px;
+    height: auto;
+    border-radius: 12px;
+}
+
+.reg{
+    width: 500px;
+    padding: 50px;
+    margin-right: 100px;
+    background-color: #ddc1a0;
+    border-radius: 12px;
+    filter: drop-shadow(8px 8px #912cc4);
+}
+
+.input_ty{
+    background-color: transparent;
+    border-right: 0;
+    border-left: 0;
+    border-top: 2px;
+    border-color: #1D111B;
+    width: 400px;
+}
+
+.btn_sub{
+    background-color: #1D111B;
+    border: none;   
+    border-radius: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: aliceblue;
+    transition: 500ms;
+}
+
+.btn_submit:hover .btn_sub{
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    filter: drop-shadow(5px 5px #912cc4);
+}
+
+
+@media only screen and ( max-width : 535px){
+    .cont{
+        padding-top: 30px;
+        padding-bottom: 50px;
+        padding-left: 0;
+    }
+    .reg{
+    width: 400px;
+    padding: 30px;
+    margin-right: 0;
+    }
+    .register_cont{
+        padding-left: 10px;
+    }
+    .input_ty{
+        width: 320px;
+    }
+    .buy_now .qr{
+        width: 250px;
+        border-radius: 12px;
+    }
+    .reg_reg{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+    }
+}
+
+@media only screen and ( max-width : 400px){
+    .cont{
+        padding-top: 30px;
+        padding-bottom: 50px;
+    }
+    .reg{
+    width: 280px;
+    padding: 10px;
+    
+    }
+    .input_ty{
+        width: 250px;
+    }
+    .buy_now .qr{
+        width: 200px;
+        border-radius: 12px;
+    }
+    .reg_reg{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+    }
+}
