@@ -29,7 +29,6 @@ var countDownDate = new Date("February 10, 2024 00:00:00").getTime();
     }, 1000);
 
 
-
 const client = new Client;
 
 const CollectionId = import.meta.env.VITE_COLLECTIONID
@@ -249,7 +248,8 @@ async function submitprem(e){
 //         // Handle upload error (e.g., display error message)
 //     }
 //   });
-  
+
+document.getElementById('btn_sub').disabled = false;
 
 //function for normal ticket
 async function normalticket(e){

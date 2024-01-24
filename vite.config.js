@@ -18,7 +18,7 @@ export default defineConfig({
         'process.meta.env.VITE_ADMINPASS':JSON.stringify(process.env.ADMIN_PASSWORD),
         'process.meta.env.VITE_COLLECTIONFULL':JSON.stringify(process.env.VITE_APP_COLLECTION_FULL),
         'process.meta.env.VITE_BUCKETID':JSON.stringify(process.env.VITE_APP_BUCKETID),
-        'process.meta.env.VITE_BUCKETID':JSON.stringify(process.env.VITE_APP_PINDOWNID),
+        'process.meta.env.VITE_PINDOWN':JSON.stringify(process.env.VITE_APP_PINDOWNID),
 
     },
 
