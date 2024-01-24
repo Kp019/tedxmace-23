@@ -9,7 +9,7 @@ const Collection_full = import.meta.env.VITE_APP_COLLECTION_FULL
 const BUCKETID = import.meta.env.VITE_APP_BUCKETID
 
 
-
+// console.log(CollectionIdGrp)
 
 client
     .setEndpoint(EndPoint)
@@ -146,6 +146,8 @@ async function cook(e){
             }
         )
 
+        // console.log(mace_resp)
+
         const rep = await db.createDocument(
             DataBaseId,
             CollectionIdGrp,
@@ -162,7 +164,8 @@ async function cook(e){
             .then((rep) => {
               z = z+1;
             })
-
+            // console.log(rep)
+            // console.log(z)
             if(z == numTickets){
               chel();
             }
