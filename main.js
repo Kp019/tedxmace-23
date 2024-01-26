@@ -136,6 +136,7 @@ async function submitprem(e){
     const email = e.target.email.value;
     const phone = e.target.phn.value;
     const org = e.target.district.value;
+    const size = e.target.size.value;
     let orgname = document.querySelector("#orname")?.value || '';
     // const link = e.target.proof.value;
     const mm = e.target.org_bla.value;
@@ -182,6 +183,7 @@ async function submitprem(e){
                 'organization': org,
                 'organization_name': 'MACE',
                 'IMGID' : imid,
+                'Tshirt' : size,
             }
         )
         
@@ -209,6 +211,7 @@ async function submitprem(e){
                 'organization': org,
                 'organization_name': orgname,
                 'IMGID' : imid,
+                'Tshirt' : size,
             }
         )
     
