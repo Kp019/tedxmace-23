@@ -14,7 +14,8 @@ dist-ssr
 
 # secret
 .env
-
+pages/admin/manual.js/*
+pages/admin/test.py/*
 
 # Editor directories and files
 .vscode/*
